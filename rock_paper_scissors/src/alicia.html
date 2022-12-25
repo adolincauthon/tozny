@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/1997e368d8.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Rock Paper Scissors</title>
+
+    <script src="./index.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var user = 'alicia';
+      getRound('alicia');
+    </script>
+  </head>
+  <body>
+    <div class="navbar w-full bg-base-100">
+      <div class="flex-1">
+        <a href="./index.html" class="btn btn-ghost normal-case text-xl"
+          >Rock, Paper, Scissors!</a
+        >
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal px-1">
+          <li>
+            <a><i class="fab fa-github"></i></a>
+          </li>
+          <li><a>About</a></li>
+          <li><a>Alicia</a></li>
+          <li><a>Bruce</a></li>
+          <li><a>Clarence</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hero min-h-screen bg-base-200">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Hello Alicia</h1>
+          <p class="py-6">
+            Would you like to play a round or check the winner for a round?
+          </p>
+          <button class="btn btn-primary play-btn">Play a round</button>
+          <button class="btn btn-primary">Check winner</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="play" style="display: none">
+      <div class="container py-10 flex justify-center">
+        <h1 id="round" class="text-4xl">Round ?</h1>
+      </div>
+      <!-- Move options -->
+      <div class="contain flex justify-around" style="">
+        <div class="card w-96 bg-base-100 shadow-xl image-full">
+          <figure>
+            <img src="../assets/rock.jpg" alt="rock" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Rock</h2>
+            <p>Select rock for this round</p>
+            <div class="card-actions justify-end">
+              <button id="rock" class="btn move-btn btn-primary">Play</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-96 bg-base-100 shadow-xl image-full">
+          <figure>
+            <img src="../assets/paper.jpg" alt="paper" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Paper</h2>
+            <p>Select paper for this round</p>
+            <div class="card-actions justify-end">
+              <button id="paper" class="btn move-btn btn-primary">Play</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-96 bg-base-100 shadow-xl image-full">
+          <figure>
+            <img src="../assets/scissors.jpg" alt="scissors" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Scissors</h2>
+            <p>Select scissors for this round</p>
+            <div class="card-actions justify-end">
+              <button id="paper" class="btn move-btn btn-primary">play</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
