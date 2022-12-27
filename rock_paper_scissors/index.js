@@ -50,6 +50,11 @@ app.get('/js/judge.js', (req, res) => {
   res.sendFile(path.join(__dirname, '/src/js/judge.js'));
 });
 
+//css
+app.get('/css/output.css', (req, res) => {
+  res.sendFile(path.join(__dirname, '/src/css/output.css'));
+});
+
 //api routes
 app.use('/api', routes);
 app.use('/data', data);

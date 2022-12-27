@@ -79,6 +79,7 @@ def double_threat(items: list) -> list:
       double_threats.append(author)
   return double_threats
 
+## return list of all items with a year in a title, track, or chapter
 def year(items: list) -> list:
   years = []
   # regex will match 1-9999 in string this will account 
@@ -110,9 +111,9 @@ top_inventory = top_five(inventory)
 long_running = running_time(inventory)
 talent = double_threat(inventory)
 
-
-
-
-
+print(f'Items with years in the title, track, or chapter: \n {years}')
+print(f'Top 5 most expensive items in each category: \n {top_inventory}')
+print(f'Items with longer than 60 minutes running time: \n {long_running}')
+print(f'Authors of both books and cds: \n {talent}')
 
 
