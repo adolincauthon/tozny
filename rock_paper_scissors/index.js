@@ -21,13 +21,13 @@ app.get('/', (req, res) => {
 });
 
 //user pages
-app.get('/alicia', (req, res) => {
+app.get('/alicia.html', (req, res) => {
   res.sendFile(path.join(__dirname, '/src/alicia.html'));
 });
-app.get('/bruce', (req, res) => {
+app.get('/bruce.html', (req, res) => {
   res.sendFile(path.join(__dirname, '/src/bruce.html'));
 });
-app.get('/clarence', (req, res) => {
+app.get('/clarence.html', (req, res) => {
   res.sendFile(path.join(__dirname, '/src/clarence.html'));
 });
 
