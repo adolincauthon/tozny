@@ -1,4 +1,4 @@
-const url = 'http://localhost:4000';
+const url = process.env.URL;
 let round;
 
 //gets user current round from API
