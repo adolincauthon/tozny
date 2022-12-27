@@ -11,7 +11,7 @@ router.get('/:user/round', async (req, res) => {
     const round = rounds[user];
     res.status(200).json({ round: round });
   } catch (error) {
-    res.status(500).json({ error: `Server Error: ${error}` });
+    res.status(500).json({ error: `Server Error: ${error}` });s
   }
 });
 module.exports = router;

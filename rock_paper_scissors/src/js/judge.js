@@ -1,4 +1,4 @@
-const url = 'http://localhost:4000';
+const url = process.env.URL;
 
 const judgeRound = async () => {
   const round = document.getElementById('enter-round').value;
