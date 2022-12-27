@@ -1,4 +1,4 @@
-const url = process.env.URL;
+const url = `${location.protocol}//${location.hostname}`;
 let round;
 
 //gets user current round from API
