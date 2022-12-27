@@ -4,7 +4,8 @@
   "description": "Rock Paper Scissors using ToznySDK",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --ignore ./config/ ./index.js"
+    "dev": "nodemon --ignore ./config/ ./index.js",
+    "start": "node ./index.js"
   },
   "author": "",
   "license": "ISC",
