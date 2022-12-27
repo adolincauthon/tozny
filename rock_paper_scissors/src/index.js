@@ -24,6 +24,7 @@ const heroClick = (btnType) => {
 
 //sends user selected move to API and updates UI
 const sendMove = async (move, user) => {
+  console.log(`Sending ${move}`);
   try {
     const response = await fetch(
       `${url}/api/user/${user}/round/${round}/move/${move}`,
