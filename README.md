@@ -18,7 +18,7 @@ If you have other test cases you would like to run it through just update the in
 
 ### Rock, paper, scissors
 
-For this app I wanted to highlight that I have a skillset that is not limited to front end development. I created a a node/express app and deployed it using render. I utilized the ToznySDK to handle the encryption and storing the round results. In order to play do the following:
+For this app I wanted to highlight that I have a skillset that is not limited to front end development. I created a a node/express app and deployed it using render. I did use the free tier so apologies for the slow loading times. I utilized the ToznySDK to handle the encryption and storing the round results. In order to play do the following:
 
 1. go to https://tozny-rps.onrender.com/
 2. Select either Bruce or Alicia
