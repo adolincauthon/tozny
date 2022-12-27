@@ -3,6 +3,7 @@ const bruce = require('../config/bruce_credentials.json');
 const alicia = require('../config/alicia_credentials.json');
 const clarence = require('../config/clarence_credentials.json');
 
+//loads client from Tozny api
 const load_client = (client_name) => {
   let data = {};
   switch (client_name.toLowerCase()) {
@@ -31,12 +32,14 @@ const load_client = (client_name) => {
   return client;
 };
 
+//shares record type with client
 const share_with_client = async (client, clientId, type) => {
   const sharedRecord = await client.share(type, clientId);
   console.log(`Shared ${type} with ${clientId}`);
   return sharedRecord;
 };
 
+//writes message to tozny store
 const write_message = async (client, name, round, data) => {
   console.log(`${name}-${round}`);
   const written = await client.writeRecord(
@@ -52,6 +55,8 @@ const write_message = async (client, name, round, data) => {
   return written;
 };
 
+//returns first match found from tozny store
+//that matches user-round
 const read_message = async (client, user, clientId, round) => {
   const request = new Tozny.types.Search(true, true, 1);
   console.log(`Searching for: ${user}-${round}`);
