@@ -17,7 +17,7 @@ app.use(
 //main api endpoint
 app.get('/', (req, res) => {});
 
-app.use('/api', routes);
+app.use('/api/', routes);
 app.use('/data', data);
 
 console.log(`Listening on Port: ${PORT}`);

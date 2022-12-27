@@ -31,15 +31,16 @@ const load_client = (client_name) => {
   return client;
 };
 
-const share_with_group = async (client, groupId, type) => {
-  const sharedRecord = await client.shareRecordWithGroup(groupId, type);
-  console.log(`${sharedRecord.record_type} shared with group ${groupId}`);
+const share_with_client = async (client, clientId, type) => {
+  const sharedRecord = await client.share(type, clientId);
+  console.log(`Shared ${type} with ${clientId}`);
   return sharedRecord;
 };
 
 const write_message = async (client, name, round, data) => {
+  console.log(`${name}-${round}`);
   const written = await client.writeRecord(
-    name,
+    `${name}-${round}`,
     {
       data: data,
     },
@@ -51,20 +52,19 @@ const write_message = async (client, name, round, data) => {
   return written;
 };
 
-const read_message = async (client, groupId, user, round) => {
-  const records = await client.listRecordsSharedWithGroup(groupId);
-  console.log(round);
-  for (let i = 0; i < records[0].length; i++) {
-    if (records[0][i].meta.plain.round === round) {
-      return records[0][i].data.data;
-    }
-  }
-  return null;
+const read_message = async (client, user, clientId, round) => {
+  const request = new Tozny.types.Search(true, true, 1);
+  console.log(`Searching for: ${user}-${round}`);
+  request.match({ type: `${user}-${round}` });
+  const resultQuery = await client.search(request);
+  const found = await resultQuery.next();
+  console.log(found[0]);
+  return found[0].data.data;
 };
 
 module.exports = {
   load_client,
-  share_with_group,
+  share_with_client,
   write_message,
   read_message,
 };

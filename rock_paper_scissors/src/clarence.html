@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link href="/output.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/1997e368d8.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Rock Paper Scissors</title>
+
+    <script type="text/javascript">
+      var user = 'clarence';
+    </script>
+
+    <script src="./judge.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="navbar w-full bg-base-100">
+      <div class="flex-1">
+        <a href="./index.html" class="btn btn-ghost normal-case text-xl"
+          >Rock, Paper, Scissors!</a
+        >
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal px-1">
+          <li>
+            <a><i class="fab fa-github"></i></a>
+          </li>
+          <li><a href="/alicia.html">Alicia</a></li>
+          <li><a href="/bruce.html">Bruce</a></li>
+          <li><a href="/clarence.html">Clarence</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hero main-menu min-h-screen bg-base-200">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl hero-heading font-bold">Hello Clarence</h1>
+          <p class="py-6">Select a round to judge or check</p>
+          <input
+            type="text"
+            placeholder="Enter round"
+            class="input input-bordered input-primary w-full my-5"
+            id="enter-round"
+          />
+          <button class="btn judge-winner btn-primary play-btn">
+            Judge round
+          </button>
+          <button class="btn check-winner btn-primary">Check winner</button>
+          <h1 id="judge" class="text-bold text-2xl"></h1>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
