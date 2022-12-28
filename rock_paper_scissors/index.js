@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
+const mongo = require('./config/mongoose.js');
 const path = require('path');
 const cors = require('cors');
 
@@ -7,8 +8,10 @@ const routes = require('./routes/userRoutes');
 const data = require('./routes/dataRoutes');
 
 const PORT = process.env.PORT || 4000;
+mongo();
 
 const app = express();
+
 app.use(express.json());
 app.use(
   cors({

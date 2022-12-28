@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs');
+const User = require('../schemas/User');
 
 const {
   load_client,
@@ -27,10 +28,14 @@ router.post('/user/:user/round/:round/move/:move', async (req, res) => {
       if (!shared) {
         throw 'Error sharing with group';
       }
-      const rounds = JSON.parse(fs.readFileSync('./config/round.json'));
-      rounds[user] += 1;
-      let data = JSON.stringify(rounds);
-      fs.writeFileSync('./config/round.json', data);
+
+      const id =
+        user === 'alicia'
+          ? '63ab8c0e3d586be62e791fb7'
+          : '63ab8c0e3d586be62e791fb8';
+
+      const updated = await User.findByIdAndUpdate(id, { $inc: { round: 1 } });
+      await updated.save();
 
       res.status(200).json({ turn: 'completed' });
     } else {
