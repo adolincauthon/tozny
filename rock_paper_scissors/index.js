@@ -22,7 +22,9 @@ app.use(
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/src/index.html'));
 });
-
+app.get('/index.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '/src/index.html'));
+});
 //user pages
 app.get('/alicia.html', (req, res) => {
   res.sendFile(path.join(__dirname, '/src/alicia.html'));
