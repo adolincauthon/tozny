@@ -11,4 +11,4 @@ const ToznySchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('User', ToznySchema);
+module.exports = mongoose.model('ToznyUser', ToznySchema);

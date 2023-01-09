@@ -18,6 +18,7 @@ router.post('/user/:user/round/:round/move/:move', async (req, res) => {
     const client = await load_client(user);
     console.log(client);
     const success = await write_message(client, user, round, move);
+    console.log(success);
     if (success) {
       const shared = await share_with_client(
         client,
@@ -34,9 +35,11 @@ router.post('/user/:user/round/:round/move/:move', async (req, res) => {
           ? '63ab8c0e3d586be62e791fb7'
           : '63ab8c0e3d586be62e791fb8';
 
-      const updated = await User.findByIdAndUpdate(id, { $inc: { round: 1 } });
-      await updated.save();
-
+      const updated = await User.findByIdAndUpdate(
+        id,
+        { $inc: { round: 1 } },
+        { new: true }
+      );
       res.status(200).json({ turn: 'completed' });
     } else {
       throw 'Error saving message';
